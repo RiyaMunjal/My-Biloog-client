@@ -55,7 +55,7 @@ const Post = () => {
   const { user } = useContext(AuthContext);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get(`${REACT_APP_BACKEND_URL}/api/post/${id}`);
+      const result = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/post/${id}`);
       setPost(result.data[0]);
     };
     fetchData();
@@ -64,7 +64,7 @@ const Post = () => {
   useEffect(()=>{
     const getAllposts=async()=>{
       try{
-        const res=await axios.get(`${REACT_APP_BACKEND_URL}/api/post/?cat=${state.cat}`)
+        const res=await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/post/?cat=${state.cat}`)
         setPosts(res.data)
         console.log(res.data);
       }catch(err){
@@ -77,7 +77,7 @@ const Post = () => {
 
   const deleteHandler=async()=>{
 
-    const res=await axios.delete(`${REACT_APP_BACKEND_URL}/api/post/${id}`, {
+    const res=await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/post/${id}`, {
       withCredentials:true
     })
     Navigate('/')

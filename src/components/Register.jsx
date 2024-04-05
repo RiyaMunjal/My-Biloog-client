@@ -23,7 +23,7 @@ const Register = () => {
     console.log(1);
     try {
       const res = await axios.post(
-        `${REACT_APP_BACKEND_URL}/api/auth/register`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/auth/register`,
         input,
         {
           headers: {

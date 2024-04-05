@@ -14,7 +14,7 @@ export const AuthContextProvider = (props) => {
 
   const login = async (input) => {
     const res = await axios.post(
-      `${REACT_APP_BACKEND_URL}/api/auth/login`,
+      `${process.env.REACT_APP_BACKEND_URL}/api/auth/login`,
       input,
       {
         headers: {
@@ -27,7 +27,7 @@ export const AuthContextProvider = (props) => {
   };
 
   const logout = async () => {
-    const res = await axios.get(`${REACT_APP_BACKEND_URL}/api/auth/logout`, {
+    const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/auth/logout`, {
       withCredentials: true,
     });
     console.log(res);

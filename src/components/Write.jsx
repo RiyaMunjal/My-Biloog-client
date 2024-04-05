@@ -21,7 +21,7 @@ const Write = () => {
       console.log("upload function");
       const formdata = new FormData();
       formdata.append("file", file);
-      const res = await axios.post(`${REACT_APP_BACKEND_URL}/upload`, formdata);
+      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/upload`, formdata);
       console.log(res.data);
       alert("File uplaoded");
       return res.data;
@@ -38,7 +38,7 @@ const Write = () => {
       console.log(2);
       console.log(state);
       const res = state
-        ? await axios.put(`${REACT_APP_BACKEND_URL}/api/post/${state?.id}` , {
+        ? await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/post/${state?.id}` , {
             title,
             description: value,
             img: imgurl,
@@ -48,7 +48,7 @@ const Write = () => {
           }
         )
         : await axios.post(
-            `${REACT_APP_BACKEND_URL}/api/post`,
+            `${process.env.REACT_APP_BACKEND_URL}/api/post`,
             {
               title,
               description: value,
