@@ -41,7 +41,7 @@ const Home = () => {
   useEffect(() => {
     const getAllPost = async () => {
       try {
-        const res = await axios.get(`https://my-biloog-server.onrender.com/api/post/${cat}`);
+        const res = await axios.get(`${REACT_APP_BACKEND_URL}/api/post/${cat}`);
         setPosts(res.data);
       } catch (err) {
         console.log(err);

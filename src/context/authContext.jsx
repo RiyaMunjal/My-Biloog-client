@@ -14,7 +14,7 @@ export const AuthContextProvider = (props) => {
 
   const login = async (input) => {
     const res = await axios.post(
-      "https://my-biloog-server.onrender.com/api/auth/login",
+      `${REACT_APP_BACKEND_URL}/api/auth/login`,
       input,
       {
         headers: {
@@ -27,7 +27,7 @@ export const AuthContextProvider = (props) => {
   };
 
   const logout = async () => {
-    const res = await axios.get("https://my-biloog-server.onrender.com/api/auth/logout", {
+    const res = await axios.get(`${REACT_APP_BACKEND_URL}/api/auth/logout`, {
       withCredentials: true,
     });
     console.log(res);
