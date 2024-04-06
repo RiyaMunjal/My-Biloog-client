@@ -22,7 +22,9 @@ const Write = () => {
       console.log("upload function");
       const formdata = new FormData();
       formdata.append("file", file);
-      const res = await axios.post(`${REACT_APP_BACKEND_URL}/upload`, formdata);
+      const res = await axios.post(`${REACT_APP_BACKEND_URL}/upload`, formdata, {
+        withCredentials:true
+      });
       console.log(res.data);
       alert("File uplaoded");
       return res.data;

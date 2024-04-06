@@ -15,8 +15,7 @@ import Login from "./components/Login.jsx";
 import Write from "./components/Write.jsx";
 import Register from "./components/Register.jsx";
 import { AuthContextProvider } from "./context/authContext.jsx";
-import dotenv from 'dotenv';
-dotenv.config();
+
 
 
 const router = createBrowserRouter(

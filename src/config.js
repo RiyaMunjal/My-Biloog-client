@@ -1,1 +1,1 @@
-export const REACT_APP_BACKEND_URL='https://my-biloog-server.onrender.com'
+export const REACT_APP_BACKEND_URL='https://my-biloog.onrender.com'
